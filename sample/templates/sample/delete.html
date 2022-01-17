@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="utf-8">
+        <title>blog</title>
+    </head>
+
+    <body>
+        <h1>Delete</h1>
+        <table>
+            <tr>
+                <th>TITLE</th>
+                <td>{{obj.title}}</td>
+            </tr>
+            <tr>
+                <th>CONTENT</th>
+                <td>{{obj.content}}</td>
+            </tr>
+            <form action="{% url 'delete' id %}" method="post">
+                {% csrf_token %}
+                <tr>
+                    <th>
+                    <td><input type="submit" value="DELETE"></td>
+                    </th>
+                </tr>
+            </form>
+        </table>
+        <p><a href="{% url 'index' %}">一覧画面へ戻る</a></p>
+    </body>
+
+</html>

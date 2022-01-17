@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<title>sample</title>
+</head>
+
+<body>
+	<h1>Create</h1>
+	<form action="{% url 'create' %}" method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="CREATE">
+	</form>
+	<p><a href="{% url 'index' %}">一覧画面へ戻る</a></p>
+</body>
+
+</html>

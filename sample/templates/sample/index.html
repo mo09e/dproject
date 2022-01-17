@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>blog</title>
+</head>
+
+<body>
+    <h1>index</h1>
+    <p><a href="{% url 'create' %}">BlogCreate</a></p> <!-- (1) -->
+    <table>
+        <thead>
+            <tr>
+                <th>TITLE</th>
+                <th>CONTENT</th>
+            </tr>
+        </thead>
+        {% for blog in data %}
+        <tr>
+            <td>{{blog.title}}</td>
+            <td>{{blog.content}}</td>
+            <td><a href="{% url 'detail' blog.id %}">Detail</a></td>
+            <td><a href="{% url 'edit' blog.id %}">Edit</a></td>
+            <td><a href="{% url 'delete' blog.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

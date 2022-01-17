@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+	<head>
+		<meta charset="utf-8">
+		<title>blog</title>
+	</head>
+
+	<body>
+		<h1>Edit</h1>
+		<form action="{% url 'edit' id %}" method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input type="submit" value="UPDATE">
+		</form>
+        <p><a href="{% url 'index' %}">一覧画面へ戻る</a></p>
+	</body>
+
+</html>
